@@ -1,0 +1,18 @@
+{
+ "id": 10,
+ "name": "TestCat",
+ "category": {
+  "id": 1,
+  "name": "Cat"
+ },
+ "photoUrls": [
+  "string"
+ ],
+ "tags": [
+  {
+   "id": 0,
+   "name": "tag22"
+  }
+ ],
+ "status": "sold"
+}
