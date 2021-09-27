@@ -17,7 +17,7 @@ Feature: User rest api CRUD test and its supporting endpoints tests
     And request createUser
     When method post
     Then status 200
-    And match response == { "id": 10, "username": "testUser", "firstName": "John", "lastName": "James", "email": "john@email.com", "password": "12345", "phone": "12345", "userStatus": 1 }
+    And match response == createUser
 
   Scenario: Create User  by  List Post
     Given path 'user/createWithList'

@@ -10,6 +10,7 @@ Feature: Pet rest api CRUD test and its supporting endpoints tests
     * url baseUrl
     * header Accept = 'application/json, text/plain, */*'
     * def updateSchema = read('file:src/test/java/schema/updatePet.json')
+    * def createPet = read('file:src/test/java/schema/createPet.json')
 
   Scenario Outline: Get list of Pets by there Status
     Given path 'pet/findByStatus'
@@ -26,17 +27,17 @@ Feature: Pet rest api CRUD test and its supporting endpoints tests
 
   Scenario: Create Pet by Post
     Given path 'pet'
-    And request read('file:src/test/java/schema/createPet.json')
+    And request createPet
     When method post
     Then status 200
-    And match response == {"id":10,"category":{"id":1,"name":"Dogs"},"name":"Testdoggie","photoUrls":["string"],"tags":[{"id":0,"name":"tag22"}],"status":"available"}
+    And match response == createPet
 
   Scenario: Get find by Tag
     Given path 'pet/findByTags'
     And param tags = 'tag22'
     When method get
     And status 200
-    And match response == [{"id":10,"category":{"id":1,"name":"Dogs"},"name":"Testdoggie","photoUrls":["string"],"tags":[{"id":0,"name":"tag22"}],"status":"available"}]
+    And match response[0] == createPet
 
   Scenario: Update Pet by Put by changing name and status to sold
     Given path 'pet'
