@@ -9,13 +9,18 @@ This require you to install
 3. NodeJS
 
 I have used Karate framework for automating the apis I got in Swagger
+
 Karate framework is a wrapper build on Restassured and Cucumber , currently it is mostly used in the startup environment where we have to quickly start api suites
 
 ### In the test suite
+
 We have created 3 feature files which consiste of endpoints related to
+
 Pet , Store and User
 
+
 In testing I have tested the CRUD functionality of all the 3 services.
+
 Also I have done Schema validations and tried to cover positive and negative scenerios
 
 All the feature files are self explainatory and we can easily understand what the tests are actually doing
